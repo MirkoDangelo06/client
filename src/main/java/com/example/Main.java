@@ -23,12 +23,13 @@ public class Main {
         do{
             System.out.println("\n" + " -  - scrivi cosa vuoi fare :  -  -" + "\n" + "1 - stringa da minuscola a maiuscola"+ "\n" + "2 - stringa da maiuscola a minuscola"+ "\n" + "3 - ribaltare i caratteri della stringa"+ "\n" + "4 - contare numero caratteri" + "\n" + "digita exit per uscire " + "\n" );    
             scelta = scanner.nextLine();
+          
            
             System.out.println("scrivi la tua stringa:");   // input scelta        
             stringMinuscola = scanner.nextLine();
-
-
           
+
+           
 
             System.out.println("la stringa scritta è " + stringMinuscola);
             System.out.println("scelta numero : " + scelta); // scelta di cosa fare 
@@ -39,8 +40,15 @@ public class Main {
 
             
             //riprendo la stringa
+           
             String stringRicevuta = in.readLine();
-            System.out.println(stringRicevuta);
+            if(stringRicevuta == null){
+              System.out.println(  "volontà di chiudere accettata");
+            }else{
+                System.out.println(stringRicevuta);
+            }
+
+            
         }while(!(stringMinuscola.equals("exit")));
 
         System.out.println("comunicazione terminata");
