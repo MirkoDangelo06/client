@@ -18,19 +18,26 @@ public class Main {
         DataOutputStream out = new DataOutputStream(s.getOutputStream());
 
         String stringMinuscola ="";
-        
+        String scelta ="";
+        Scanner scanner = new Scanner(System.in);
         do{
-
-            System.out.println("scrivi la tua stringa:");
-            Scanner scanner = new Scanner(System.in);
+            System.out.println("\n" + " -  - scrivi cosa vuoi fare :  -  -" + "\n" + "1 - stringa da minuscola a maiuscola"+ "\n" + "2 - stringa da maiuscola a minuscola"+ "\n" + "3 - ribaltare i caratteri della stringa"+ "\n" + "4 - contare numero caratteri" + "\n" + "digita exit per uscire " + "\n" );    
+            scelta = scanner.nextLine();
+           
+            System.out.println("scrivi la tua stringa:");   // input scelta        
             stringMinuscola = scanner.nextLine();
+
+
           
 
             System.out.println("la stringa scritta è " + stringMinuscola);
-
+            System.out.println("scelta numero : " + scelta); // scelta di cosa fare 
+              
             //invio stringa al server
             out.writeBytes(stringMinuscola + "\n");
-            if(stringMinuscola.equals("exit")) break;
+            out.writeBytes(scelta + "\n");
+
+            
             //riprendo la stringa
             String stringRicevuta = in.readLine();
             System.out.println(stringRicevuta);
