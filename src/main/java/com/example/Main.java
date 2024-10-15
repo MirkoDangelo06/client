@@ -29,7 +29,7 @@ public class Main {
             stringMinuscola = scanner.nextLine();
           
 
-           
+           // avrei da fare uno switch dove faccio altri controlli, fallo a casa , ricordatelo
 
             System.out.println("la stringa scritta è " + stringMinuscola);
             System.out.println("scelta numero : " + scelta); // scelta di cosa fare 
@@ -42,12 +42,16 @@ public class Main {
             //riprendo la stringa
            
             String stringRicevuta = in.readLine();
-            if(stringRicevuta == null){
+            System.out.println(stringRicevuta);
+            if(stringRicevuta == null)
               System.out.println(  "volontà di chiudere accettata");
-            }else{
-                System.out.println(stringRicevuta);
-            }
-
+            
+            if( stringRicevuta.equals("!"))
+               System.out.println(  "scelta non valida");
+            
+                
+            
+            
             
         }while(!(stringMinuscola.equals("exit")));
 
